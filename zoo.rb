@@ -4,18 +4,19 @@ class Animal
 	end
 
 	def wield_food
-		[]
+		# assuming all animal likes apple
+		[:apple]
 	end
 end
 
 class Panda < Animal
 	def wield_food
-		[:bamboo]
+		super + [:bamboo]
 	end
 end
 
 class Lion < Animal 
 	def wield_food
-		[:wildebeests, :zeebras]
+		super + [:wildebeests, :zeebras]
 	end
 end
