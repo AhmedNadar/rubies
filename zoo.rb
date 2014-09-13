@@ -1,5 +1,6 @@
 class Panda
 	def likes?(food)
-		return true if food == :bamboo
+		food.to_sym == :bamboo
 	end
+
 end
