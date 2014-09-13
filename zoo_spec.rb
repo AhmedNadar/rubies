@@ -1,5 +1,10 @@
 require_relative 'zoo'
 
+describe Animal do
+  it "should not rais an error when it like a food" do
+  	expect { Animal.new.likes?(:food) }.to_not raise_error
+  end
+end
 
 describe Panda do
   it "should likes bamboo" do

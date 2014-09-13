@@ -2,6 +2,10 @@ class Animal
 	def likes?(food)
 		wield_food.include?(food.to_sym)
 	end
+
+	def wield_food
+		[]
+	end
 end
 
 class Panda < Animal
@@ -10,7 +14,7 @@ class Panda < Animal
 	end
 end
 
-class Lion < Animal
+class Lion < Animal 
 	def wield_food
 		[:wildebeests, :zeebras]
 	end
