@@ -14,3 +14,9 @@ describe Panda do
   	expect(Panda.new.likes?("sushi")).to eq false
   end
 end
+
+describe Lion do
+	it "should eat wildebeests" do
+		expect(Lion.new.likes?(:wildebeests)).to eq true
+	end
+end
