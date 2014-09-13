@@ -20,6 +20,10 @@ describe Lion do
 		expect(Lion.new.likes?(:wildebeests)).to eq true
 	end
 
+	it "should eat zeebras" do
+		expect(Lion.new.likes?(:zeebras)).to eq true
+	end
+
 	it "should not eat tuna" do
 		expect(Lion.new.likes?(:tuna)).to eq false
 	end
