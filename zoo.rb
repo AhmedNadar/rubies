@@ -6,7 +6,10 @@ end
 
 class Lion
 	def likes?(food)
-		lion_food = [:wildebeests, :zeebras]
-		lion_food.include?(food.to_sym)
+		wield_food.include?(food.to_sym)
+	end
+
+	def wield_food
+		[:wildebeests, :zeebras]
 	end
 end
