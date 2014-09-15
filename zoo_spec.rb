@@ -32,6 +32,12 @@ describe Panda do
   	end
   	expect(panda).to be_full
   end
+
+  it "should not be full after eating 1 bamboo" do
+    panda = Panda.new
+    panda.eat(:bamboo)
+    expect(panda).not_to be_full
+  end
 end
 
 describe Lion do
