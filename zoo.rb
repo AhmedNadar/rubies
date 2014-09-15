@@ -13,6 +13,10 @@ class Panda < Animal
 	def wield_food
 		super + [:bamboo]
 	end
+
+	def eat(food)
+		true
+	end
 end
 
 class Lion < Animal 
@@ -23,6 +27,8 @@ end
 
 class Zookeeper
 	def feed(args={})
-		
+		food = args.fetch(:food)
+		panda = args.fetch(:to)
+		panda.eat(:food)
 	end
 end

@@ -18,6 +18,10 @@ describe Panda do
   it "should not like Sushi as food" do
   	expect(Panda.new.likes?("sushi")).to eq false
   end
+
+  it "should be able to eat the food" do
+  	expect(Panda.new.eat(:bamboo)).to eql true
+  end
 end
 
 describe Lion do
@@ -35,7 +39,11 @@ describe Lion do
 end
 
 describe Zookeeper do
-	zk = Zookeeper.new
-	panda = Panda.new
-	zk.feed(food: :bamboo, to: :panda)
+	it "should be able to feed bamboo to Pandas" do
+		zk = Zookeeper.new
+		panda = Panda.new
+		zk.feed(food: :bamboo, to: panda)
+		expect(panda).to receive(:eat).with(:bamboo) # Expecting messages
+		panda.eat(:bamboo)
+	end	
 end
