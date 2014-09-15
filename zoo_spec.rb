@@ -2,7 +2,13 @@ require_relative 'zoo'
 
 describe Animal do
   it "should not rais an error when it like a food" do
-  	expect { Animal.new.likes?(:food) }.to_not raise_error
+  	animal = Animal.new
+  	expect { animal.likes?(:apple) }.to_not raise_error
+  end
+
+  it "should be able to eat the food" do
+  	animal = Animal.new
+  	expect(animal.eat(:apple)).to eql true
   end
 end
 
@@ -17,10 +23,6 @@ describe Panda do
 
   it "should not like Sushi as food" do
   	expect(Panda.new.likes?("sushi")).to eq false
-  end
-
-  it "should be able to eat the food" do
-  	expect(Panda.new.eat(:bamboo)).to eql true
   end
 end
 
@@ -46,4 +48,12 @@ describe Zookeeper do
 		expect(panda).to receive(:eat).with(:bamboo) # Expecting messages
 		panda.eat(:bamboo)
 	end	
+
+	it "should be able to feed zeebras to Lions" do
+		zk = Zookeeper.new
+		lion = Lion.new
+		zk.feed(food: :zeebras, to: lion)
+		expect(lion).to receive(:eat).with(:zeebras) # Expecting messages
+		lion.eat(:zeebras)
+	end		
 end

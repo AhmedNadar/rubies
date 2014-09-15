@@ -7,15 +7,15 @@ class Animal
 		# assuming all animal likes apple
 		[:apple]
 	end
+
+	def eat(food)
+		true
+	end
 end
 
 class Panda < Animal
 	def wield_food
 		super + [:bamboo]
-	end
-
-	def eat(food)
-		true
 	end
 end
 
@@ -29,6 +29,6 @@ class Zookeeper
 	def feed(args={})
 		food = args.fetch(:food)
 		panda = args.fetch(:to)
-		panda.eat(:food)
+		panda.eat(:food) # this does't test that Panda actully eat the food
 	end
 end
