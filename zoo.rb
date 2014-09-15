@@ -40,6 +40,10 @@ class Lion < Animal
 	def wield_food
 		super + [:wildebeests, :zeebras]
 	end
+
+	def full?
+		@meals > 10
+	end
 end
 
 class Zookeeper

@@ -52,6 +52,20 @@ describe Lion do
 	it "should not eat tuna" do
 		expect(Lion.new.likes?(:tuna)).to eq false
 	end
+
+	it "should be after eating 11 meals" do
+	  lion = Lion.new
+	  11.times do
+	  	lion.eat(:zeebras)
+		end
+	  expect(lion).to be_full
+	end
+
+	it "should not be full when it eats less than 11 meals" do
+	  lion = Lion.new
+	  lion.eat(:zeebras)
+	  expect(lion).not_to be_full
+	end
 end
 
 describe Zookeeper do
