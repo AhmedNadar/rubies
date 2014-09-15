@@ -4,10 +4,10 @@ class Animal
 	  @meals = 0
 	end
 	def likes?(food)
-		wield_food.include?(food.to_sym)
+		wild_food.include?(food.to_sym)
 	end
 
-	def wield_food
+	def wild_food
 		# assuming all animal likes apple
 		[:apple]
 	end
@@ -27,7 +27,7 @@ class Animal
 end
 
 class Panda < Animal
-	def wield_food
+	def wild_food
 		super + [:bamboo]
 	end
 
@@ -37,7 +37,7 @@ class Panda < Animal
 end
 
 class Lion < Animal 
-	def wield_food
+	def wild_food
 		super + [:wildebeests, :zeebras]
 	end
 
