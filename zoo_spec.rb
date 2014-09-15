@@ -24,6 +24,14 @@ describe Panda do
   it "should not like Sushi as food" do
   	expect(Panda.new.likes?("sushi")).to eq false
   end
+
+  it "should be full after eating 30 bamboo" do
+  	panda = Panda.new
+  	31.times do
+  		panda.eat(:bamboo)
+  	end
+  	expect(panda).to be_full
+  end
 end
 
 describe Lion do

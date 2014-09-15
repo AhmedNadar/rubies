@@ -1,4 +1,8 @@
 class Animal
+
+	def initialize
+	  @meals = 0
+	end
 	def likes?(food)
 		wield_food.include?(food.to_sym)
 	end
@@ -9,13 +13,26 @@ class Animal
 	end
 
 	def eat(food)
-		true
+			if likes?(food)
+				@meals += 1
+				true
+			else
+				false
+			end
+	end
+
+	def full?
+		false
 	end
 end
 
 class Panda < Animal
 	def wield_food
 		super + [:bamboo]
+	end
+
+	def full?
+		@meals > 30	
 	end
 end
 
