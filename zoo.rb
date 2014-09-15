@@ -20,3 +20,9 @@ class Lion < Animal
 		super + [:wildebeests, :zeebras]
 	end
 end
+
+class Zookeeper
+	def feed(args={})
+		
+	end
+end
