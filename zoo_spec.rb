@@ -33,3 +33,9 @@ describe Lion do
 		expect(Lion.new.likes?(:tuna)).to eq false
 	end
 end
+
+describe Zookeeper do
+	zk = Zookeeper.new
+	panda = Panda.new
+	zk.feed(food: :bamboo, to: :panda)
+end
