@@ -1,13 +1,11 @@
 # Animal module
 module Animal
-
 	def likes?(food)
-		wild_food.include?(food.to_sym)
+		acceptable_food.include?(food)
 	end
 
-	def wild_food
-		# assuming all animal likes apple
-		[:apple]
+	def acceptable_food
+		[]
 	end
 
 	def eat(food)
@@ -25,11 +23,20 @@ module Animal
 	end
 end
 
+class Food
+	attr_accessor :name
+	def initialize(name)
+	  @name = name
+	end
+end
+
 # Panda class
 class Panda 
 	include Animal
-	def wild_food
-		super + [:bamboo]
+
+	def acceptable_food
+		bamboo = Food.new("bamboo")
+		[bamboo.name]
 	end
 
 	def full?
@@ -39,8 +46,10 @@ end
 
 class Lion
 	include Animal
-	def wild_food
-		super + [:wildebeests, :zeebras]
+	def acceptable_food
+		wildebeests = Food.new("wildebeests")
+		zeebras = Food.new("zeebras")
+		[wildebeests.name, zeebras.name]
 	end
 
 	def full?
@@ -74,9 +83,9 @@ class FoodBarge
 	def food_for(animal)
 		case animal
 		when Panad
-			animal.wild_food
+			animal.acceptable_food
 		when Lion
-			animal.wild_food
+			animal.acceptable_food
 		else
 			false
 		end
