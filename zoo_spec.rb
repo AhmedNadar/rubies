@@ -88,3 +88,12 @@ describe Zookeeper do
 	  expect(zk.eat(:apple)).to eq true
 	end
 end
+
+describe FoodBarge do
+	 it "should be able to check the food for each animal" do
+	   foodbarge = FoodBarge.new
+	   panda = Panda.new
+	   expect(foodbarge).to receive(:food_for).with(:panda)
+	   foodbarge.food_for(:panda)
+	 end
+end

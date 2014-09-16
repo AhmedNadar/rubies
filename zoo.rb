@@ -70,3 +70,15 @@ class Zookeeper
 	end
 end
 
+class FoodBarge
+	def food_for(animal)
+		case animal
+		when Panad
+			animal.wild_food
+		when Lion
+			animal.wild_food
+		else
+			false
+		end
+	end
+end
