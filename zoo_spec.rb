@@ -1,17 +1,5 @@
 require_relative 'zoo'
 
-describe Animal do
-  it "should not rais an error when it like a food" do
-  	animal = Animal.new
-  	expect { animal.likes?(:apple) }.to_not raise_error
-  end
-
-  it "should be able to eat the food" do
-  	animal = Animal.new
-  	expect(animal.eat(:apple)).to eql true
-  end
-end
-
 describe Panda do
   it "should likes bamboo" do
   	expect(Panda.new.likes?(:bamboo)).to eq true

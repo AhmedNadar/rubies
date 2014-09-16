@@ -1,8 +1,6 @@
-class Animal
+# Animal module
+module Animal
 
-	def initialize
-	  @meals = 0
-	end
 	def likes?(food)
 		wild_food.include?(food.to_sym)
 	end
@@ -13,6 +11,7 @@ class Animal
 	end
 
 	def eat(food)
+		@meals ||= 0 # initialize @meal
 			if likes?(food)
 				@meals += 1
 				true
@@ -26,7 +25,9 @@ class Animal
 	end
 end
 
-class Panda < Animal
+# Panda class
+class Panda 
+	include Animal
 	def wild_food
 		super + [:bamboo]
 	end
@@ -36,7 +37,8 @@ class Panda < Animal
 	end
 end
 
-class Lion < Animal 
+class Lion
+	include Animal
 	def wild_food
 		super + [:wildebeests, :zeebras]
 	end
