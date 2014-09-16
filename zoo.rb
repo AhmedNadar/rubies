@@ -51,6 +51,7 @@ end
 
 # Human module
 module Human
+	include Animal
 	def likes?(food)
 		dite.include?(food.to_sym)	
 	end
