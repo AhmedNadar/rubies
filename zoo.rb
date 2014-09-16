@@ -48,10 +48,24 @@ class Lion
 	end
 end
 
+
+# Human module
+module Human
+	def likes?(food)
+		dite.include?(food.to_sym)	
+	end
+
+	def dite
+		[:salad, :apple]
+	end
+end
+
 class Zookeeper
+	include Human
 	def feed(args={})
 		food = args.fetch(:food)
 		panda = args.fetch(:to)
 		panda.eat(:food) # this does't test that Panda actully eat the food
 	end
 end
+

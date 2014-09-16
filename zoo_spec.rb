@@ -72,4 +72,14 @@ describe Zookeeper do
 		expect(lion).to receive(:eat).with(:zeebras) # Expecting messages
 		lion.eat(:zeebras)
 	end		
+
+	it "should likes salad" do
+		zk = Zookeeper.new
+		expect(zk.likes?(:salad)).to eq true  
+		expect(zk.likes?(:apple)).to eq true  
+	end
+	it "should not like bamboo" do
+		zk = Zookeeper.new
+	  expect(zk.likes?(:bamboo)).to eq false
+	end
 end
