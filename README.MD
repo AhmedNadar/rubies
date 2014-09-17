@@ -1,2 +1,0 @@
-## Pandas, Lions and Zookeeprs
--------------------------------
