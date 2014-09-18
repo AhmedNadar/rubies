@@ -1,36 +1,7 @@
-# Animal module
-module Animal
-	def likes?(food)
-		acceptable_food.include?(food)
-	end
+require_relative 'human'
+require_relative 'animal'
 
-	def acceptable_food
-		[]
-	end
-
-	def eat(food)
-		@meals ||= 0 # initialize @meal
-			if likes?(food)
-				@meals += 1
-				true
-			else
-				false
-			end
-	end
-
-	def full?
-		false
-	end
-end
-
-class Food
-	attr_accessor :name
-	def initialize(name)
-	  @name = name
-	end
-end
-
-# Panda class
+# PANDA
 class Panda 
 	include Animal
 
@@ -44,6 +15,7 @@ class Panda
 	end
 end
 
+#LION
 class Lion
 	include Animal
 	def acceptable_food
@@ -57,19 +29,15 @@ class Lion
 	end
 end
 
-
-# Human module
-module Human
-	include Animal
-	def likes?(food)
-		dite.include?(food.to_sym)	
-	end
-
-	def dite
-		[:salad, :apple]
+# FOOD
+class Food
+	attr_accessor :name
+	def initialize(name)
+	  @name = name
 	end
 end
 
+# ZOOKEEPER
 class Zookeeper
 	include Human
 	def feed(args={})
@@ -79,6 +47,7 @@ class Zookeeper
 	end
 end
 
+# FOODBARGE
 class FoodBarge
 	def food_for(animal)
 		case animal
