@@ -8,6 +8,7 @@
 	* The most magical one is `integers | integers`. What is that ??!!
 		a. It returns a new array by joining original array with other array, excluding any duplicates and preserving the order from the original array.
 		b. It compares elements using their hash and eql? methods for efficiency.
+		c. The | pipe charachter set unioin between both objects (integers and integers). What does is, unioin/add both objects together only when they are unique. 
 
 ```
 irb(main):001:0> [ 1, 2, 4, 5, 2, 8, 4, 1 ] | [ 4, 3, 4, 6, 2, 3, 4, 1 ] #=> [1, 2, 4, 5, 8, 3, 6]
