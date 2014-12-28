@@ -70,4 +70,20 @@ class Encryptor
     # Close the file
     decrypted_file.close
   end
+
+  def supported_characters
+    (' '..'z').to_a
+  end
+
+  def crack(message)
+    results = supported_characters.count.times.collect do |attempt|
+      decrypt(message, attempt)
+    end
+
+    file= File.open("cracked.txt", "w")
+    results.each do |result|
+      file.write("#{result} \n")
+    end
+    file.close
+  end
 end
