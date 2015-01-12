@@ -40,13 +40,8 @@
 	- _**Example**_	`contents = CSV.open "event_attendees.csv", headers: true, header_converters: :symbol`
 
 ## Issues
-- When I run the code I get this error:
+- I faced this error while trying to run my code: `undefined method 'encode' for nil:NilClass (NoMethodError)`
 
-  `“/usr/local/Cellar/ruby/2.1.4/lib/ruby/2.1.0/csv.rb:995:in 'block' in: undefined method 'encode' for nil:NilClass (NoMethodError)”`
+	I wrote a [blog post](bit.ly/1y1Kypg) about it where I show what caused that issue and what is the fix.
+	
 
-- I went on a hunt mission to find out why this is not working with me while I'm using internal API. This is an evidence that something wrong with my program. 
-
-- The error I got is related to "header_converters: ()" method. It turns out that my "event_attendees.csv" file missing a space or a blank before first comma. Here is my initial file: ",RegDate,first_Name,last_Name,..." and here it is after " ,RegDate,first_Name,last_Name,...".
-
-- Adding that space before first comma solved the issue. Also I found removing that comma and the blank completely is another solution "RegDate,first_Name,last_Name,..."
-The blank gets read in as nil, and since nil can't be converted to a symbol, it blows up.
