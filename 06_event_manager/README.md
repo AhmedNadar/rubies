@@ -21,11 +21,19 @@
 	
 	- _**Example**_	 `zipcode.rjust 5, "0" if zipcode.length < 5`
 
+## NilClass 
+- [#to_s](http://www.rubydoc.info/stdlib/core/NilClass:to_s)
+	- Always returns the empty string.
+	- Using this method we can convert `nil` to string instead of checking for it's value.
+	- _**Example**_	 `zipcode.to_s.rjust(5,"0")[0..4]`
+	
 
 ## Array 
 - [each_with_index](http://rubydoc.info/stdlib/core/Enumerable#each_with_index-instance_method) `lines.each_wtih_index do |line, index|`
 
+
 ## Ruby [CSV](http://rubydoc.info/stdlib/csv) Library
+
 
 #### Class Methods
    - `open( filename, options = Hash.new )`
