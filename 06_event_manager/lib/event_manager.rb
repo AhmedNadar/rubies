@@ -6,5 +6,9 @@ contents.each do |row|
   fname = row[:first_name]
   city = row[:city]
   state = row[:state]
-  puts "#{fname} from #{city} which is part of #{state} state. "
+  zipcode = row[:zipcode]
+  # if the zip code is exactly five digits, assume that it is ok
+  # if the zip code is more than 5 digits, truncate it to the first 5 digits
+  # if the zip code is less than 5 digits, add zeros to the front until it becomes five digits
+  puts "#{fname} lives in #{city} city, in #{state} state, and zipcode #{zipcode}. "
 end
