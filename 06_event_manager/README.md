@@ -9,9 +9,18 @@
 
 
 ## String
-- [String#split](http://rubydoc.info/stdlib/core/String#split-instance_method)
-- By default it will break the string whenever it sees "" space. `line.split(" ")`
-- Passing a parameter like "," would break the string apart along a comma "," character. `line.split(",")`
+- [#split](http://rubydoc.info/stdlib/core/String#split-instance_method)
+	- By default it will break the string whenever it sees "" space.
+	- Passing a parameter like "," would break the string apart along a comma "," character.
+	
+	- _**Example**_	 `line.split(",")`
+
+- [#rjust](http://www.rubydoc.info/stdlib/core/String:rjust)- 
+	- Append string to the front of other string.
+	- If integer is greater than the length of string, returns a new `String` of length integer with string **right justified - _rjust_** and padded with padded string; otherwise, returns string.
+	
+	- _**Example**_	 `zipcode.rjust 5, "0" if zipcode.length < 5`
+
 
 ## Array 
 - [each_with_index](http://rubydoc.info/stdlib/core/Enumerable#each_with_index-instance_method) `lines.each_wtih_index do |line, index|`
