@@ -25,11 +25,27 @@
 - [#to_s](http://www.rubydoc.info/stdlib/core/NilClass:to_s)
 	- Always returns the empty string.
 	- Using this method we can convert `nil` to string instead of checking for it's value.
+
 	- _**Example**_	 `zipcode.to_s.rjust(5,"0")[0..4]`
 	
 
 ## Array 
-- [each_with_index](http://rubydoc.info/stdlib/core/Enumerable#each_with_index-instance_method) `lines.each_wtih_index do |line, index|`
+- [#each_with_index](http://rubydoc.info/stdlib/core/Enumerable#each_with_index-instance_method) `lines.each_wtih_index do |line, index|`
+
+- [#collect](http://www.rubydoc.info/stdlib/core/Array:collect) 
+	- Invokes the given block once for each element of self. Creates a new array containing the values returned by the block.
+
+	- _**Example**_	 
+	
+	```
+	legislator_names = legislators.collect do |legislator|
+	    "#{legislator.first_name} #{legislator.last_name}"
+  	end
+  	```
+- [#join](http://www.rubydoc.info/stdlib/core/Array:join) 
+	- Returns a string created by converting each element of the array to a string, separated by the given `separator`. If the `separator` is `nil`, it uses current `$,`. If both the `separator` and `$`, are `nil`, it uses empty string.
+
+	- _**Example**_	 `legislators_string = legislator_names.join(",")`
 
 
 ## Ruby [CSV](http://rubydoc.info/stdlib/csv) Library

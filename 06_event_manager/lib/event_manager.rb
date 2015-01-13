@@ -1,19 +1,31 @@
 require 'csv'
-puts "EventManager Initialized!"
+require 'sunlight/congress'
+
+Sunlight::Congress.api_key = "e70d6fb44df947a9bc8b5f51e34d5ca5"
 
 def clear_zipcode(zipcode)
   zipcode.to_s.rjust(5, "0")[0..4]
 end
 
+
+def legislators_by_zipcode(zipcode)
+  legislators = Sunlight::Congress::Legislator.by_zipcode(zipcode)
+
+  legislator_names = legislators.collect do |legislator|
+    "#{legislator.first_name} #{legislator.last_name}"
+  end
+  legislator_names.join(",")
+end
+
+puts "EventManager Initialized!"
+
 contents = CSV.open "event_attendees.csv", headers: true, header_converters: :symbol
 contents.each do |row|
   fname = row[:first_name]
-  city = row[:city]
-  state = row[:state]
   zipcode = clear_zipcode(row[:zipcode])
-  # if the zip code is exactly five digits, assume that it is ok
-  # if the zip code is more than 5 digits, truncate it to the first 5 digits
-  # if the zip code is less than 5 digits, add zeros to the front until it becomes five digits
-  puts "#{fname} lives in #{city} city, in #{state} state, and zipcode #{zipcode}. "
+
+  legislators= legislators_by_zipcode(zipcode)
+
+  puts "#{fname} #{zipcode}: #{legislators}"
 end
 
