@@ -7,7 +7,7 @@
 * 03 - :bento:[The block](https://github.com/AhmedNadar/rubies/tree/master/03_block_review)
 * 04 - :fireworks: [TDD](https://github.com/AhmedNadar/rubies/tree/master/04_tdd/furlong)
 * 05 - :closed_lock_with_key: [Encrypt, decrypt and crack messages](https://github.com/AhmedNadar/rubies/tree/master/05_encryptor).
-* 06 - Numbers
+* 06 - :100: [Numbers](https://github.com/AhmedNadar/rubies/tree/master/Numbers)
 
 
 -------
