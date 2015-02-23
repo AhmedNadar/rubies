@@ -1,4 +1,4 @@
-## Rubies
+# Rubies
 ##### Working on over 100 projects in various categories in Ruby.
 ------
 
@@ -11,9 +11,11 @@
 
 
 -------
-Sources
+## Sources
 =======
 
 * [Martyr2’s Mega Project List](http://www.dreamincode.net/forums/topic/78802-martyr2s-mega-project-ideas-list/)
 * [Rosetta Code](http://rosettacode.org/)
 * [Pete's Projects](https://github.com/petehuang/Projects)
+* [Fincher](http://www.fincher.org/tips/Languages/Ruby/)
+* [codewars](http://www.codewars.com/kata/search/ruby)
